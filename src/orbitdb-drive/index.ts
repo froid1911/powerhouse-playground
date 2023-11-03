@@ -1,8 +1,51 @@
 import { create } from "ipfs-core";
+// @ts-ignore
 import { createOrbitDB } from "@orbitdb/core";
-import { utils } from "document-model-libs/dist/document-drive";
+import DocumentDrive from "document-model-libs/document-drive";
 
-const defaultData = utils.createDocument({
+const defaultData = DocumentDrive.utils.createDocument({
+    name: "My Local Drives",
+    state: {
+        drives: [
+            {
+                id: "123",
+                name: "Local Device",
+                hash: "test",
+                nodes: [
+                    {
+                        name: "Document Models",
+                        path: "Document Models",
+                        hash: "folder",
+                        kind: "folder",
+                    },
+                    {
+                        name: "Address Book",
+                        path: "Document Models/addressBook.phdm.zip",
+                        hash: "Address Book",
+                        kind: "file",
+                        documentType: "powerhouse/document-model",
+                    },
+                    {
+                        name: "Document Drive",
+                        path: "Document Models/documentDrive.phdm.zip",
+                        hash: "Document Drive",
+                        kind: "file",
+                        documentType: "powerhouse/document-model",
+                    },
+                    {
+                        name: "Document Editor",
+                        path: "Document Models/documentEditor.phdm.zip",
+                        hash: "Document Editor",
+                        kind: "file",
+                        documentType: "powerhouse/document-model",
+                    },
+                ],
+            },
+        ],
+    },
+});
+
+const instance = new DocumentDrive.DocumentDrive({
     name: "My Local Drives",
     state: {
         drives: [

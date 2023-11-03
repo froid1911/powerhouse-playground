@@ -5,15 +5,18 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
+        "start": "tsx src/orbitdb-drive/index.ts",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "",
     "license": "ISC",
     "devDependencies": {
+        "tsx": "^3.14.0",
+        "typescript": "^5.2.2"
     },
     "dependencies": {
         "@orbitdb/core": "^1.0.0",
-        "document-model": "^1.0.5",
+        "document-model": "^1.0.6",
         "document-model-libs": "^1.1.9",
         "ipfs-core": "^0.18.1",
         "ipfs-http-client": "^60.0.1"
